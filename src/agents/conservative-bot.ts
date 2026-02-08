@@ -11,7 +11,7 @@
 
 import { BaseAgent, AgentConfig, MarketData, Prediction, TradeDecision } from './base-agent';
 import { AuditLogger } from '../audit/audit-trail';
-import { calculateVolatilityAdjusted } from '../risk/position-sizing';
+import { calculateVolatilityAdjusted, PortfolioBalancer } from '../risk/position-sizing';
 
 export interface ConservativeConfig {
   wallet: { address: string; balance: bigint };

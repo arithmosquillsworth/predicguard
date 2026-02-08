@@ -11,9 +11,12 @@
     "test:security": "jest --testPathPattern=security",
     "lint": "eslint src/ --ext .ts",
     "audit": "slither contracts/ || true && npm audit",
-    "agent:conservative": "ts-node src/agents/conservative-bot.ts",
-    "agent:balanced": "ts-node src/agents/balanced-bot.ts",
-    "agent:aggressive": "ts-node src/agents/aggressive-bot.ts"
+    "agent:conservative": "ts-node src/agents/run-conservative.ts",
+    "agent:balanced": "ts-node src/agents/run-balanced.ts",
+    "agent:aggressive": "ts-node src/agents/run-aggressive.ts",
+    "compile": "hardhat compile",
+    "deploy:audit": "hardhat run scripts/deploy-audit.ts",
+    "deploy:risk": "hardhat run scripts/deploy-risk-manager.ts"
   },
   "keywords": [
     "prediction-market",
@@ -26,18 +29,20 @@
   "author": "Arithmos Quillsworth",
   "license": "MIT",
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.0",
     "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.19.0",
     "eslint": "^8.56.0",
+    "hardhat": "^2.19.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "ethers": "^6.10.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "ethers": "^6.10.0"
   }
 }
