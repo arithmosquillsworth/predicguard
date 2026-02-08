@@ -49,7 +49,7 @@ contract PredicGuardRiskManager {
     event PositionClosed(
         address indexed agent,
         bytes32 indexed marketId,
-        uint256 pnl
+        int256 pnl
     );
     
     event RiskLimitHit(address indexed agent, string limitType);

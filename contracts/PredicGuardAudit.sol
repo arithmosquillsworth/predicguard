@@ -77,7 +77,7 @@ contract PredicGuardAudit {
         bytes32 _hash,
         uint256 _timestamp,
         string calldata _entryType
-    ) external onlyAuthorized returns (bool) {
+    ) public onlyAuthorized returns (bool) {
         require(entries[_hash].timestamp == 0, "Entry exists");
         require(_timestamp <= block.timestamp, "Future timestamp");
         

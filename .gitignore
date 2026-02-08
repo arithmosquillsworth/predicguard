@@ -12,4 +12,6 @@ coverage/
 cache/
 artifacts/
 typechain-types/
-.openclaw/
+.openclaw/out/
+cache/
+artifacts/
