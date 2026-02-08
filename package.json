@@ -1,0 +1,43 @@
+{
+  "name": "predicguard",
+  "version": "0.1.0",
+  "description": "Security-first prediction market agents with anti-manipulation and risk management",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "test": "jest --coverage",
+    "test:security": "jest --testPathPattern=security",
+    "lint": "eslint src/ --ext .ts",
+    "audit": "slither contracts/ || true && npm audit",
+    "agent:conservative": "ts-node src/agents/conservative-bot.ts",
+    "agent:balanced": "ts-node src/agents/balanced-bot.ts",
+    "agent:aggressive": "ts-node src/agents/aggressive-bot.ts"
+  },
+  "keywords": [
+    "prediction-market",
+    "defi",
+    "security",
+    "risk-management",
+    "ai-agent",
+    "anti-manipulation"
+  ],
+  "author": "Arithmos Quillsworth",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "ethers": "^6.10.0",
+    "dotenv": "^16.3.1"
+  }
+}
